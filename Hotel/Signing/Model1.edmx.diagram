@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="aee70c0b3b3541efb33864816dcbf7e8" Name="Diagram1">
+        <EntityTypeShape EntityType="hotelModel.Booking" Width="1.5" PointX="5.75" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="hotelModel.FondOfNumbers" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="hotelModel.Living" Width="1.5" PointX="4" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="hotelModel.Places" Width="1.5" PointX="2.25" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="hotelModel.Registration" Width="1.5" PointX="9.375" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="hotelModel.Remember" Width="1.5" PointX="7.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="hotelModel.sysdiagrams" Width="1.5" PointX="7.625" PointY="2" IsExpanded="true" />
+        <AssociationConnector Association="hotelModel.FK_Living_FondOfNumbers" ManuallyRouted="false" />
+        <AssociationConnector Association="hotelModel.FK_Places_FondOfNumbers" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

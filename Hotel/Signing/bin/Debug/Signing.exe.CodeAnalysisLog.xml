@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio 14.0\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="14.0">
+ <Targets>
+  <Target Name="D:\Учеба\курсач C#\прога\Signing\Signing\bin\Debug\Signing.exe">
+   <Modules>
+    <Module Name="signing.exe">
+     <Namespaces>
+      <Namespace Name="Signing">
+       <Types>
+        <Type Name="FondOfNumbers" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#.ctor()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2017-03-27 23:03:16Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalWarning" Path="D:\Учеба\курсач C#\прога\Signing\Signing" File="FondOfNumbers.cs" Line="17">'FondOfNumbers.FondOfNumbers()' содержит цепочку вызовов, которая приводит к вызову виртуального метода, определенного классом. Просмотрите следующий стек вызовов для обнаружения непреднамеренных последствий: &#xD;&#xA;&#xD;&#xA;FondOfNumbers..ctor()&#xD;&#xA;FondOfNumbers.set_Living(ICollection&lt;Living&gt;):Void</Issue>
+             <Issue Certainty="95" Level="CriticalWarning" Path="D:\Учеба\курсач C#\прога\Signing\Signing" File="FondOfNumbers.cs" Line="17">'FondOfNumbers.FondOfNumbers()' содержит цепочку вызовов, которая приводит к вызову виртуального метода, определенного классом. Просмотрите следующий стек вызовов для обнаружения непреднамеренных последствий: &#xD;&#xA;&#xD;&#xA;FondOfNumbers..ctor()&#xD;&#xA;FondOfNumbers.set_Places(ICollection&lt;Places&gt;):Void</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="hotelDataSet" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2017-03-27 23:03:16Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">Добавьте реализацию GetObjectData к типу 'hotelDataSet'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="hotelDataSet+BookingDataTable" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2017-03-27 23:03:16Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">Добавьте реализацию GetObjectData к типу 'hotelDataSet.BookingDataTable'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="hotelDataSet+FondOfNumbersDataTable" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2017-03-27 23:03:16Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">Добавьте реализацию GetObjectData к типу 'hotelDataSet.FondOfNumbersDataTable'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="hotelDataSet+LivingDataTable" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2017-03-27 23:03:16Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">Добавьте реализацию GetObjectData к типу 'hotelDataSet.LivingDataTable'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="hotelDataSet+PlacesDataTable" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2017-03-27 23:03:16Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">Добавьте реализацию GetObjectData к типу 'hotelDataSet.PlacesDataTable'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="hotelDataSet+RegistrationDataTable" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2017-03-27 23:03:16Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">Добавьте реализацию GetObjectData к типу 'hotelDataSet.RegistrationDataTable'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="UserWindow" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#SearchCategory_KeyUp(System.Object,System.Windows.Input.KeyEventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Проверка запросов SQL на уязвимости безопасности" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2017-03-27 23:03:16Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="D:\Учеба\курсач C#\прога\Signing\Signing" File="UserWindow.xaml.cs" Line="121">Строка запроса, переданная 'SqlDataAdapter.SqlDataAdapter(string, SqlConnection)' в 'UserWindow.SearchCategory_KeyUp(object, KeyEventArgs)', может содержать следующие переменные 'this.SearchCategory.Text'. Если любая из этих переменных может поступать из вводимых пользователем данных, рассмотрите возможность использования хранимой процедуры или параметризованного запроса SQL вместо сборки запроса с помощью конкатенации строк.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SearchPlace_KeyUp(System.Object,System.Windows.Input.KeyEventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Проверка запросов SQL на уязвимости безопасности" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2017-03-27 23:03:16Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="D:\Учеба\курсач C#\прога\Signing\Signing" File="UserWindow.xaml.cs" Line="98">Строка запроса, переданная 'SqlDataAdapter.SqlDataAdapter(string, SqlConnection)' в 'UserWindow.SearchPlace_KeyUp(object, KeyEventArgs)', может содержать следующие переменные 'this.SearchPlace.Text'. Если любая из этих переменных может поступать из вводимых пользователем данных, рассмотрите возможность использования хранимой процедуры или параметризованного запроса SQL вместо сборки запроса с помощью конкатенации строк.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SearchStatus_KeyUp(System.Object,System.Windows.Input.KeyEventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Проверка запросов SQL на уязвимости безопасности" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2017-03-27 23:03:16Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="D:\Учеба\курсач C#\прога\Signing\Signing" File="UserWindow.xaml.cs" Line="109">Строка запроса, переданная 'SqlDataAdapter.SqlDataAdapter(string, SqlConnection)' в 'UserWindow.SearchStatus_KeyUp(object, KeyEventArgs)', может содержать следующие переменные 'this.SearchStatus.Text'. Если любая из этих переменных может поступать из вводимых пользователем данных, рассмотрите возможность использования хранимой процедуры или параметризованного запроса SQL вместо сборки запроса с помощью конкатенации строк.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214">
+   <Name>Не вызывайте переопределяемые методы в конструкторах</Name>
+   <Description>Виртуальные методы, определенные в классе, не следует вызывать из конструкторов. Если производный класс переопределил метод, будет вызвана версия производного класса (до вызова конструктора производного класса).</Description>
+   <Resolution Name="Default">{0} содержит цепочку вызовов, которая приводит к вызову виртуального метода, определенного классом. Просмотрите следующий стек вызовов для обнаружения непреднамеренных последствий: {1}</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182331.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalWarning</MessageLevel>
+   <File Name="usagerules.dll" Version="14.0.0.0" />
+  </Rule>
+  <Rule TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240">
+   <Name>Правильно реализуйте ISerializable</Name>
+   <Description>Если тип допускает присваивание к ISerializable, он должен реализовать GetObjectData. Для незапечатанных типов производные типы должны иметь возможность вызывать и переопределять метод GetObjectData.</Description>
+   <Resolution Name="Default">Добавьте реализацию GetObjectData к типу {0}.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182342.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="60">Error</MessageLevel>
+   <File Name="usagerules.dll" Version="14.0.0.0" />
+  </Rule>
+  <Rule TypeName="Проверка запросов SQL на уязвимости безопасности" Category="Microsoft.Security" CheckId="CA2100">
+   <Name>Проверка запросов SQL на уязвимости безопасности</Name>
+   <Description>Командная строка SQL, создаваемая на основе введенных пользователем данных, уязвима к атакам типа "инъекция SQL". Microsoft SQL Server и другие серверы баз данных поддерживают хранимые процедуры и параметризованные SQL-запросы, что снижает риск атак путем внедрения.</Description>
+   <Resolution Name="WithNonLiterals">Строка запроса, переданная {0} в {1}, может содержать следующие переменные {2}. Если любая из этих переменных может поступать из вводимых пользователем данных, рассмотрите возможность использования хранимой процедуры или параметризованного запроса SQL вместо сборки запроса с помощью конкатенации строк.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182310.aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="14.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Категория</String>
+  <String Key="Certainty">Достоверность</String>
+  <String Key="CollapseAll">Свернуть все</String>
+  <String Key="CheckId">ИД проверки</String>
+  <String Key="Error">Ошибка</String>
+  <String Key="Errors">ошибки</String>
+  <String Key="ExpandAll">Развернуть все</String>
+  <String Key="Help">Справка</String>
+  <String Key="Line">Строка</String>
+  <String Key="Messages">сообщения</String>
+  <String Key="LocationNotStoredInPdb">[расположение не сохранено в PDB]</String>
+  <String Key="Project">Проект</String>
+  <String Key="Resolution">Разрешение</String>
+  <String Key="Rule">Правило</String>
+  <String Key="RuleFile">Файл правил</String>
+  <String Key="RuleDescription">Описание правила</String>
+  <String Key="Source">Источник</String>
+  <String Key="Status">Состояние</String>
+  <String Key="Target">Цель</String>
+  <String Key="Warning">Предупреждение</String>
+  <String Key="Warnings">предупреждения</String>
+  <String Key="ReportTitle">Отчет по анализу кода</String>
+ </Localized>
+</FxCopReport>

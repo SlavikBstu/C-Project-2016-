@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="hotelModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Booking">
+    <Key>
+      <PropertyRef Name="RegistrationID" />
+    </Key>
+    <Property Name="RegistrationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DateOfBooking" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CategoryOfRoom" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NumberOfRoom" Type="Int32" Nullable="false" />
+    <Property Name="NumberOfPeople" Type="Int32" Nullable="false" />
+    <Property Name="DateOfRice" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="StayPeriod" Type="Int32" Nullable="false" />
+    <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FondOfNumbers">
+    <Key>
+      <PropertyRef Name="NumberOfRoom" />
+    </Key>
+    <Property Name="NumberOfRoom" Type="Int32" Nullable="false" />
+    <Property Name="CategoryOfRoom" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Price" Type="Single" Nullable="false" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Living" Relationship="Self.FK_Living_FondOfNumbers" FromRole="FondOfNumbers" ToRole="Living" />
+    <NavigationProperty Name="Places" Relationship="Self.FK_Places_FondOfNumbers" FromRole="FondOfNumbers" ToRole="Places" />
+  </EntityType>
+  <EntityType Name="Living">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="DateOfRice" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DateOfLeave" Type="DateTime" Precision="0" />
+    <Property Name="NumberOfRoom" Type="Int32" Nullable="false" />
+    <Property Name="Place" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Passport" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="FondOfNumbers" Relationship="Self.FK_Living_FondOfNumbers" FromRole="Living" ToRole="FondOfNumbers" />
+  </EntityType>
+  <EntityType Name="Places">
+    <Key>
+      <PropertyRef Name="IDOfPlace" />
+    </Key>
+    <Property Name="IDOfPlace" Type="Int32" Nullable="false" />
+    <Property Name="NumberOfRoom" Type="Int32" Nullable="false" />
+    <Property Name="Place" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="FondOfNumbers" Relationship="Self.FK_Places_FondOfNumbers" FromRole="Places" ToRole="FondOfNumbers" />
+  </EntityType>
+  <EntityType Name="Registration">
+    <Key>
+      <PropertyRef Name="Login" />
+    </Key>
+    <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AccessCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Remember">
+    <Key>
+      <PropertyRef Name="Login" />
+    </Key>
+    <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_Living_FondOfNumbers">
+    <End Role="FondOfNumbers" Type="Self.FondOfNumbers" Multiplicity="1" />
+    <End Role="Living" Type="Self.Living" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FondOfNumbers">
+        <PropertyRef Name="NumberOfRoom" />
+      </Principal>
+      <Dependent Role="Living">
+        <PropertyRef Name="NumberOfRoom" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Places_FondOfNumbers">
+    <End Role="FondOfNumbers" Type="Self.FondOfNumbers" Multiplicity="1" />
+    <End Role="Places" Type="Self.Places" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FondOfNumbers">
+        <PropertyRef Name="NumberOfRoom" />
+      </Principal>
+      <Dependent Role="Places">
+        <PropertyRef Name="NumberOfRoom" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="hotelEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Booking" EntityType="Self.Booking" />
+    <EntitySet Name="FondOfNumbers" EntityType="Self.FondOfNumbers" />
+    <EntitySet Name="Living" EntityType="Self.Living" />
+    <EntitySet Name="Places" EntityType="Self.Places" />
+    <EntitySet Name="Registration" EntityType="Self.Registration" />
+    <EntitySet Name="Remember" EntityType="Self.Remember" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <AssociationSet Name="FK_Living_FondOfNumbers" Association="Self.FK_Living_FondOfNumbers">
+      <End Role="FondOfNumbers" EntitySet="FondOfNumbers" />
+      <End Role="Living" EntitySet="Living" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Places_FondOfNumbers" Association="Self.FK_Places_FondOfNumbers">
+      <End Role="FondOfNumbers" EntitySet="FondOfNumbers" />
+      <End Role="Places" EntitySet="Places" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

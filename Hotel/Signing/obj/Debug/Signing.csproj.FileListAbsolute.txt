@@ -1,0 +1,48 @@
+D:\Учеба\2 курс\4 семестр\Мат прог\Лабы\Signing\Signing\bin\Debug\Signing.exe.config
+D:\Учеба\2 курс\4 семестр\Мат прог\Лабы\Signing\Signing\bin\Debug\Signing.exe
+D:\Учеба\2 курс\4 семестр\Мат прог\Лабы\Signing\Signing\bin\Debug\Signing.pdb
+D:\Учеба\2 курс\4 семестр\Мат прог\Лабы\Signing\Signing\obj\Debug\Signing.csprojResolveAssemblyReference.cache
+D:\Учеба\2 курс\4 семестр\Мат прог\Лабы\Signing\Signing\obj\Debug\MainWindow.baml
+D:\Учеба\2 курс\4 семестр\Мат прог\Лабы\Signing\Signing\obj\Debug\MainWindow.g.cs
+D:\Учеба\2 курс\4 семестр\Мат прог\Лабы\Signing\Signing\obj\Debug\App.g.cs
+D:\Учеба\2 курс\4 семестр\Мат прог\Лабы\Signing\Signing\obj\Debug\Signing_MarkupCompile.cache
+D:\Учеба\2 курс\4 семестр\Мат прог\Лабы\Signing\Signing\obj\Debug\Signing.g.resources
+D:\Учеба\2 курс\4 семестр\Мат прог\Лабы\Signing\Signing\obj\Debug\Signing.Properties.Resources.resources
+D:\Учеба\2 курс\4 семестр\Мат прог\Лабы\Signing\Signing\obj\Debug\Signing.csproj.GenerateResource.Cache
+D:\Учеба\2 курс\4 семестр\Мат прог\Лабы\Signing\Signing\obj\Debug\Signing.exe
+D:\Учеба\2 курс\4 семестр\Мат прог\Лабы\Signing\Signing\obj\Debug\Signing.pdb
+D:\Учеба\2 курс\4 семестр\Мат прог\Лабы\Signing\Signing\obj\Debug\LoginWindow.baml
+D:\Учеба\2 курс\4 семестр\Мат прог\Лабы\Signing\Signing\obj\Debug\LoginWindow.g.cs
+D:\Учеба\2 курс\4 семестр\Мат прог\Лабы\Signing\Signing\obj\Debug\UserWindow.baml
+D:\Учеба\2 курс\4 семестр\Мат прог\Лабы\Signing\Signing\obj\Debug\UserWindow.g.cs
+D:\Учеба\2 курс\4 семестр\курсач\прога\Signing\Signing\bin\Debug\Signing.exe.config
+D:\Учеба\2 курс\4 семестр\курсач\прога\Signing\Signing\obj\Debug\Signing.exe
+D:\Учеба\2 курс\4 семестр\курсач\прога\Signing\Signing\obj\Debug\Signing.pdb
+D:\Учеба\2 курс\4 семестр\курсач\прога\Signing\Signing\bin\Debug\Signing.exe
+D:\Учеба\2 курс\4 семестр\курсач\прога\Signing\Signing\bin\Debug\Signing.pdb
+D:\Учеба\2 курс\4 семестр\курсач\прога\Signing\Signing\obj\Debug\LoginWindow.baml
+D:\Учеба\2 курс\4 семестр\курсач\прога\Signing\Signing\obj\Debug\MainWindow.baml
+D:\Учеба\2 курс\4 семестр\курсач\прога\Signing\Signing\obj\Debug\UserWindow.baml
+D:\Учеба\2 курс\4 семестр\курсач\прога\Signing\Signing\obj\Debug\LoginWindow.g.cs
+D:\Учеба\2 курс\4 семестр\курсач\прога\Signing\Signing\obj\Debug\MainWindow.g.cs
+D:\Учеба\2 курс\4 семестр\курсач\прога\Signing\Signing\obj\Debug\UserWindow.g.cs
+D:\Учеба\2 курс\4 семестр\курсач\прога\Signing\Signing\obj\Debug\App.g.cs
+D:\Учеба\2 курс\4 семестр\курсач\прога\Signing\Signing\obj\Debug\Signing_MarkupCompile.cache
+D:\Учеба\2 курс\4 семестр\курсач\прога\Signing\Signing\obj\Debug\Signing.g.resources
+D:\Учеба\2 курс\4 семестр\курсач\прога\Signing\Signing\obj\Debug\Signing.Properties.Resources.resources
+D:\Учеба\2 курс\4 семестр\курсач\прога\Signing\Signing\obj\Debug\Signing.csproj.GenerateResource.Cache
+D:\Учеба\2 курс\4 семестр\курсач\прога\Signing\Signing\obj\Debug\SigningWindow.baml
+D:\Учеба\2 курс\4 семестр\курсач\прога\Signing\Signing\obj\Debug\SigningWindow.g.cs
+D:\Учеба\2 курс\4 семестр\курсач\прога\Signing\Signing\bin\Debug\images\Oxygen480-actions-dialog-close.png
+D:\Учеба\2 курс\4 семестр\курсач\прога\Signing\Signing\obj\Debug\BookingWindow.baml
+D:\Учеба\2 курс\4 семестр\курсач\прога\Signing\Signing\obj\Debug\BookingWindow.g.cs
+D:\Учеба\2 курс\4 семестр\курсач\прога\Signing\Signing\obj\Debug\Signing.csprojResolveAssemblyReference.cache
+D:\Учеба\2 курс\4 семестр\курсач\прога\Signing\Signing\bin\Debug\EntityFramework.dll
+D:\Учеба\2 курс\4 семестр\курсач\прога\Signing\Signing\bin\Debug\EntityFramework.SqlServer.dll
+D:\Учеба\2 курс\4 семестр\курсач\прога\Signing\Signing\bin\Debug\EntityFramework.xml
+D:\Учеба\2 курс\4 семестр\курсач\прога\Signing\Signing\bin\Debug\EntityFramework.SqlServer.xml
+D:\Учеба\2 курс\4 семестр\курсач\прога\Signing\Signing\bin\Debug\ru\EntityFramework.resources.dll
+D:\Учеба\2 курс\4 семестр\курсач\прога\Signing\Signing\obj\Debug\LivingWindow.baml
+D:\Учеба\2 курс\4 семестр\курсач\прога\Signing\Signing\obj\Debug\LivingWindow.g.cs
+D:\Учеба\2 курс\4 семестр\курсач\прога\Signing\Signing\bin\Debug\Signing.exe.CodeAnalysisLog.xml
+D:\Учеба\2 курс\4 семестр\курсач\прога\Signing\Signing\bin\Debug\Signing.exe.lastcodeanalysissucceeded

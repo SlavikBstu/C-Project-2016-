@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище hotelModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Booking">
+    <Key>
+      <PropertyRef Name="RegistrationID" />
+    </Key>
+    <Property Name="RegistrationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DateOfBooking" Type="date" Nullable="false" />
+    <Property Name="CategoryOfRoom" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="NumberOfRoom" Type="int" Nullable="false" />
+    <Property Name="NumberOfPeople" Type="int" Nullable="false" />
+    <Property Name="DateOfRice" Type="date" Nullable="false" />
+    <Property Name="StayPeriod" Type="int" Nullable="false" />
+    <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FondOfNumbers">
+    <Key>
+      <PropertyRef Name="NumberOfRoom" />
+    </Key>
+    <Property Name="NumberOfRoom" Type="int" Nullable="false" />
+    <Property Name="CategoryOfRoom" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Price" Type="real" Nullable="false" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Living">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DateOfRice" Type="date" Nullable="false" />
+    <Property Name="DateOfLeave" Type="date" />
+    <Property Name="NumberOfRoom" Type="int" Nullable="false" />
+    <Property Name="Place" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Surname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Passport" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Places">
+    <Key>
+      <PropertyRef Name="IDOfPlace" />
+    </Key>
+    <Property Name="IDOfPlace" Type="int" Nullable="false" />
+    <Property Name="NumberOfRoom" Type="int" Nullable="false" />
+    <Property Name="Place" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Registration">
+    <Key>
+      <PropertyRef Name="Login" />
+    </Key>
+    <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Surname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="AccessCategory" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Remember">
+    <Key>
+      <PropertyRef Name="Login" />
+    </Key>
+    <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_Living_FondOfNumbers">
+    <End Role="FondOfNumbers" Type="Self.FondOfNumbers" Multiplicity="1" />
+    <End Role="Living" Type="Self.Living" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FondOfNumbers">
+        <PropertyRef Name="NumberOfRoom" />
+      </Principal>
+      <Dependent Role="Living">
+        <PropertyRef Name="NumberOfRoom" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Places_FondOfNumbers">
+    <End Role="FondOfNumbers" Type="Self.FondOfNumbers" Multiplicity="1" />
+    <End Role="Places" Type="Self.Places" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FondOfNumbers">
+        <PropertyRef Name="NumberOfRoom" />
+      </Principal>
+      <Dependent Role="Places">
+        <PropertyRef Name="NumberOfRoom" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище hotelModelContainer">
+    <EntitySet Name="Booking" EntityType="Self.Booking" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FondOfNumbers" EntityType="Self.FondOfNumbers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Living" EntityType="Self.Living" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Places" EntityType="Self.Places" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Registration" EntityType="Self.Registration" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Remember" EntityType="Self.Remember" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Living_FondOfNumbers" Association="Self.FK_Living_FondOfNumbers">
+      <End Role="FondOfNumbers" EntitySet="FondOfNumbers" />
+      <End Role="Living" EntitySet="Living" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Places_FondOfNumbers" Association="Self.FK_Places_FondOfNumbers">
+      <End Role="FondOfNumbers" EntitySet="FondOfNumbers" />
+      <End Role="Places" EntitySet="Places" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

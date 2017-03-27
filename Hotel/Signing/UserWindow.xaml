@@ -1,0 +1,40 @@
+﻿<Window x:Class="Signing.UserWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="UserWindow" Height="300" Width="550" WindowStyle="None" Background="#FFEFF3F5" AllowsTransparency="True">
+    <Window.Resources>
+
+        <ControlTemplate x:Key="ReturnButton" TargetType="{x:Type Button}">
+            <Grid>
+            	<Image x:Name="image" Margin="0,0,4.5,0" Source="images/return.jpg" Stretch="Fill" Width="96"/>
+            </Grid>
+            <ControlTemplate.Triggers>
+        		<Trigger Property="IsMouseOver" Value="True">
+        			<Setter Property="Opacity" TargetName="image" Value="0.85"/>
+        		</Trigger>
+        		<EventTrigger RoutedEvent="FrameworkElement.Loaded"/>
+        		<Trigger Property="IsDefault" Value="False"/>
+        	</ControlTemplate.Triggers>
+
+        </ControlTemplate>
+
+    </Window.Resources>
+    <Grid>
+        <Menu Margin="0,0,0,258" Background="#FFEFF3F5">
+            <MenuItem Header="Сделать заявку" Height="40" Width="97" Click="Create_Click"></MenuItem>
+            <MenuItem Header="Посмотреть" Height="40" Width="81" >
+                <MenuItem Header="Категории номеров" Click="Category_Click"></MenuItem>
+                <MenuItem Header="Наличие номеров" Click="Having_Click"></MenuItem>
+                <MenuItem Header="Места" Click="Places_Click"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <Button x:Name="ReturnButton" Content="Назад" HorizontalAlignment="Left" Height="35.666" Margin="10,243,0,0" VerticalAlignment="Top" Width="102.5" Click="SigninButton_Click" Template="{DynamicResource ReturnButton}" Opacity="0.8" IsCancel="True"/>
+        <DataGrid Name="DataGrid1" AutoGenerateColumns="True" HorizontalAlignment="Left" Margin="234,47,0,0" IsTextSearchEnabled="True" IsEnabled="True" SelectionMode="Extended"  VerticalAlignment="Top" Height="161" Width="306"/>
+        <Label Content="Вы зашли под гостевым &#xA;пользователем. Здесь Вы можете &#xA;оставлять заявку на бронирование&#xA;номеров, просмотреть&#xD;&#xA;информацию о номерах и их&#xD;&#xA;наличии." HorizontalAlignment="Left" Margin="10,68,0,0" VerticalAlignment="Top" Width="205" Height="149" BorderBrush="White"/>
+        <TextBox Name="SearchPlace" HorizontalAlignment="Left" Height="22" Margin="234,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" KeyUp="SearchPlace_KeyUp"/>
+        <TextBox Name="SearchCategory" HorizontalAlignment="Left" Height="22" Margin="234,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" KeyUp="SearchCategory_KeyUp"/>
+        <TextBox x:Name="SearchStatus" HorizontalAlignment="Left" Height="22" Margin="234,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" KeyUp="SearchStatus_KeyUp"/>
+
+
+    </Grid>
+</Window>

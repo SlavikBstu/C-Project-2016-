@@ -1,0 +1,97 @@
+﻿<Window x:Class="Signing.BookingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="BookingWindow" Height="325" Background="#FFEFF3F5" Width="300" WindowStyle="None" AllowsTransparency="True">
+    <Window.Resources>
+        <ControlTemplate x:Key="BokkingButton" TargetType="{x:Type Button}">
+        	<Grid x:Name="grid" HorizontalAlignment="Left" Height="34" VerticalAlignment="Top" Width="140.666" Margin="-6.333,0,-1.333,0" Opacity="0.85">
+        		<Image Source="images/booking.jpg" Stretch="Fill" Margin="0,4,0,0"/>
+        	</Grid>
+        	<ControlTemplate.Triggers>
+        		<Trigger Property="IsDefault" Value="False"/>
+        		<Trigger Property="IsDefault" Value="False"/>
+        		<Trigger Property="IsMouseOver" Value="True">
+        			<Setter Property="Opacity" TargetName="grid" Value="1"/>
+        		</Trigger>
+        	</ControlTemplate.Triggers>
+        </ControlTemplate>
+        <ControlTemplate x:Key="CancelButton" TargetType="{x:Type Button}">
+        	<Grid Margin="0,0,-5,-8">
+        		<Image x:Name="image" Margin="0,1,-3,-4.5" Source="images/Cansel.PNG" Stretch="Fill"/>
+        	</Grid>
+        	<ControlTemplate.Triggers>
+        		<Trigger Property="IsMouseOver" Value="True">
+        			<Setter Property="Opacity" TargetName="image" Value="0.75"/>
+        		</Trigger>
+        	</ControlTemplate.Triggers>
+        </ControlTemplate>
+        <Style x:Key="FocusVisual">
+        	<Setter Property="Control.Template">
+        		<Setter.Value>
+        			<ControlTemplate>
+        				<Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+        			</ControlTemplate>
+        		</Setter.Value>
+        	</Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <Style x:Key="ExitButtonStyle" TargetType="{x:Type Button}">
+        	<Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+        	<Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+        	<Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+        	<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        	<Setter Property="BorderThickness" Value="1"/>
+        	<Setter Property="HorizontalContentAlignment" Value="Center"/>
+        	<Setter Property="VerticalContentAlignment" Value="Center"/>
+        	<Setter Property="Padding" Value="1"/>
+        	<Setter Property="Template">
+        		<Setter.Value>
+        			<ControlTemplate TargetType="{x:Type Button}">
+        				<Grid HorizontalAlignment="Left" Height="29.5" VerticalAlignment="Top" Width="29.5">
+        					<Image x:Name="image" Margin="-0.5,0,0,-0.5" Source="pack://siteoforigin:,,,/images/Oxygen480-actions-dialog-close.png" Stretch="Fill" Height="30" Width="30" Opacity="0.5"/>
+        				</Grid>
+        				<ControlTemplate.Triggers>
+        					<Trigger Property="IsMouseOver" Value="True">
+        						<Setter Property="Opacity" TargetName="image" Value="1"/>
+        					</Trigger>
+        					<Trigger Property="IsDefaulted" Value="true"/>
+        					<Trigger Property="IsMouseOver" Value="true"/>
+        					<Trigger Property="IsPressed" Value="true"/>
+        					<Trigger Property="IsEnabled" Value="false"/>
+        				</ControlTemplate.Triggers>
+        			</ControlTemplate>
+        		</Setter.Value>
+        	</Setter>
+        </Style>
+    </Window.Resources>
+    <Grid Loaded="Grid_Loaded">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <ComboBox Name="CategoryOfRoom" HorizontalAlignment="Left" VerticalAlignment="Top" Width="141" Margin="31,48,0,0" Height="23">
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+        </ComboBox>
+        <TextBox Name="NumberOfPeople" HorizontalAlignment="Left" Height="23" Margin="31,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143" PreviewTextInput="NumberOfPeople_PreviewTextInput"/>
+        <DatePicker Name="DateOfRace" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="31,166,0,0" Height="23" Width="143" Background="White"/>
+        <TextBox Name="StayPeriod" HorizontalAlignment="Left" Height="23" Margin="31,225,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143" PreviewTextInput="StayPeriod_PreviewTextInput"/>
+        <Label Content="Категория комнаты" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="31,17,0,0" Height="26" Width="117"/>
+        <Label Content="Количество человек" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="31,76,0,0" Height="26" Width="122"/>
+        <Label Content="Дата заезда" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="31,135,0,0" Height="26" Width="74"/>
+        <Label Content="Срок пребывания" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="31,194,0,0" Height="26" Width="109"/>
+        <Button x:Name="BookingButton"  HorizontalAlignment="Left" Margin="37.5,263,0,0" VerticalAlignment="Top" Width="134.5" Click="Button_Click" Height="40" Template="{DynamicResource BokkingButton}" IsDefault="True">
+        	<Image Height="45" Source="images/booking.jpg" Stretch="Fill" Width="122"/>
+        </Button>
+        <Button x:Name="ReturnButton" HorizontalAlignment="Left" Height="30" Margin="265,3.833,0,0" VerticalAlignment="Top" Width="30" Click="Button_Click_1" Style="{DynamicResource ExitButtonStyle}"/>
+
+
+
+
+
+    </Grid>
+</Window>
